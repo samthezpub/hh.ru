@@ -20,6 +20,9 @@ public class VacancyEntity {
     @OneToMany(fetch = FetchType.EAGER)
     private List<CategoryEntity> category;
 
+    @ManyToOne
+    private CompanyEntity company;
+
     @Column(name = "min_salary")
     private Integer minSalary;
 
