@@ -1,0 +1,27 @@
+.text-elem1 {
+    opacity: 0;
+    animation: ani 2s forwards;
+}
+
+.text-elem2 {
+    opacity: 0;
+    animation: ani 2s forwards;
+    animation-delay: 2s; /* Задержка для второго элемента */
+}
+
+.text-elem3 {
+    opacity: 0;
+    animation: ani 2s forwards;
+    animation-delay: 4s; /* Задержка для третьего элемента */
+}
+
+.btn {
+    opacity: 0;
+    animation: ani 2s forwards;
+    animation-delay: 5.5s; /* Задержка для четвертого элемента */
+}
+
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
