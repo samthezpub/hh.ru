@@ -11,8 +11,9 @@ public class SpringSecurityWebConfigurer {
 
     @Bean
     public SecurityFilterChain securityChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests((request) ->
-                request.requestMatchers("/").permitAll()
+        http.authorizeHttpRequests((request) -> request
+                .requestMatchers("/css/**", "/js/**").permitAll()
+                .requestMatchers("/").permitAll()
         );
 
         return http.build();
