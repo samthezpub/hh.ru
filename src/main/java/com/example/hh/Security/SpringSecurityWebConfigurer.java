@@ -14,6 +14,8 @@ public class SpringSecurityWebConfigurer {
         http.authorizeHttpRequests((request) -> request
                 .requestMatchers("/css/**", "/js/**").permitAll()
                 .requestMatchers("/").permitAll()
+
+                .requestMatchers("/auth/signup").permitAll()
         );
 
         return http.build();

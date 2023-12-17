@@ -7,10 +7,10 @@ import java.util.List;
 
 @Data
 @Entity
-public class CityEntity {
+public class RoleEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    private Integer id;
 
     private String name;
 

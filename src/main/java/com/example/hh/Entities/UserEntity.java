@@ -1,17 +1,22 @@
 package com.example.hh.Entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
 
+@Data
 @Entity
 public class UserEntity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    private RoleEntity role;
 
     // то по чему будем входить
     private String username;
@@ -27,6 +32,7 @@ public class UserEntity implements UserDetails {
 
     @OneToMany
     private List<ResponseEntity> responses;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
